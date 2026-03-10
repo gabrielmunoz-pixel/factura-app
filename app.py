@@ -182,7 +182,7 @@ st.caption("Lector inteligente de facturas · Powered by Claude")
 
 with st.sidebar:
     st.markdown("### Configuracion")
-    api_key = st.text_input("Anthropic API Key", type="password", placeholder="sk-ant-...")
+    api_key = st.secrets.get("ANTHROPIC_API_KEY", "") or st.text_input("Anthropic API Key", type="password", placeholder="sk-ant-...")
     st.caption("Tu clave no se almacena.")
     st.markdown("[Obtener API Key](https://console.anthropic.com/)")
 
